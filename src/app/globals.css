@@ -1,26 +1,134 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0, 0%, 96%;
+    --foreground: 0, 0%, 50%;
+    --placeholder: 0, 0%, 60%;
+
+    --container: 0, 0%, 100%;
+    --left-panel: 0, 0%, 99%;
+
+    --gray-primary: 300, 14%, 14%;
+    --gray-secondary: 0, 0%, 96%;
+    --gray-tertiary: 0, 0%, 94%;
+
+    --icon-color: 0, 0%, 70%;
+    --chat-hover: 180, 5%, 96%;
+
+    --green-primary: 300, 14%, 27%;
+    --green-chat: 300, 13%, 18%;
+
+    /* Custom design tokens */
+    --card: 0, 0%, 100%;
+    --card-foreground: 222.2, 84%, 4.9%;
+
+    --popover: 0, 0%, 100%;
+    --popover-foreground: 0, 0%, 50%;
+
+    --primary: 300, 15%, 20%;
+    --primary-foreground: 0, 0%, 50%;
+
+    --secondary: 210, 40%, 96.1%;
+    --secondary-foreground: 222.2, 47.4%, 11.2%;
+
+    --muted: 210, 40%, 96.1%;
+    --muted-foreground: 215.4, 16.3%, 46.9%;
+
+    --accent: 300, 14%, 14%;
+    --accent-foreground: 0, 0%, 96%;
+
+    --destructive: 0, 84.2%, 60.2%;
+    --destructive-foreground: 210, 40%, 98%;
+
+    --border: 214.3, 31.8%, 91.4%;
+    --input: 225, 3%, 69%;
+    --ring: 222.2, 84%, 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 300, 18%, 10%;
+    --foreground: 210, 40%, 98%;
+    --placeholder: 0, 0%, 60%;
+
+    --container: 318, 22%, 9%;
+    --left-panel: 318, 22%, 9%;
+
+    --gray-primary: 300, 14%, 14%;
+    --gray-secondary: 300, 14%, 14%;
+    --gray-tertiary: 300, 14%, 14%;
+
+    --chat-hover: 300, 14%, 14%;
+    --green-primary: 300, 14%, 20%;
+    --green-secondary: 165, 100%, 39%;
+    --green-chat: 300, 13%, 22%;
+
+    --card: 0, 0%, 100%;
+    --card-foreground: 210, 40%, 98%;
+
+    --popover: 318, 22%, 9%;
+    --popover-foreground: 210, 40%, 98%;
+
+    --primary: 210, 40%, 98%;
+    --primary-foreground: 300, 18%, 10%;
+
+    --secondary: 217.2, 32.6%, 17.5%;
+    --secondary-foreground: 210, 40%, 98%;
+
+    --muted: 217.2, 32.6%, 17.5%;
+    --muted-foreground: 215, 20.2%, 65.1%;
+
+    --accent: 300, 14%, 20%;
+    --accent-foreground: 210, 40%, 98%;
+
+    --destructive: 0, 62.8%, 30.6%;
+    --destructive-foreground: 210, 40%, 98%;
+
+    --border: 220, 9%, 46%;
+    --input: 0, 0%, 60%;
+    --ring: 212.7, 26.8%, 83.9%;
+  }
+
+  .light input::placeholder {
+    color: hsl(var(--placeholder));
+  }
+
+  .dark input::placeholder {
+    color: hsl(var(--placeholder));
+  }
+
+  .myCallContainer {
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+  }
+
+  * {
+    border-color: hsl(var(--border));
+  }
+
+  body {
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  /* DARK MODE THIN SCROLLBAR */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--gray-primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--container));
+  }
 }
