@@ -193,7 +193,13 @@ const MediaImageDialog = ({
           {renderedImage && (
             <Image src={renderedImage} width={300} height={300} alt="selected image" />
           )}
-          <Button className="w-full" disabled={isLoading} onClick={handleSendImage}>
+          <Button className="w-full flex gap-2 border
+   text-primary-foreground border-primary-foreground
+
+    dark:bg-card dark:text-primary-foreground dark:border-card 
+
+    hover:border
+    dark:hover:bg-gray-tertiary dark:hover:text-white" disabled={isLoading} onClick={handleSendImage}>
             {isLoading ? "Sending..." : "Send"}
           </Button>
         </DialogDescription>
@@ -229,7 +235,13 @@ const MediaVideoDialog = ({
         <div className="w-full">
           {renderedVideo && <ReactPlayer url={renderedVideo} controls width="100%" />}
         </div>
-        <Button className="w-full" disabled={isLoading} onClick={handleSendVideo}>
+        <Button className="w-full flex gap-2 border
+   text-primary-foreground border-primary-foreground
+
+    dark:bg-card dark:text-primary-foreground dark:border-card 
+
+    hover:border
+    dark:hover:bg-gray-tertiary dark:hover:text-white" disabled={isLoading} onClick={handleSendVideo}>
           {isLoading ? "Sending..." : "Send"}
         </Button>
       </DialogContent>
@@ -261,7 +273,13 @@ const MediaDocumentDialog = ({
         <DialogDescription className="text-center">
           Document: <strong>{selectedDocument.name}</strong>
         </DialogDescription>
-        <Button className="w-full" disabled={isLoading} onClick={handleSendDocument}>
+        <Button className="w-full flex gap-2 border
+   text-primary-foreground border-primary-foreground
+
+    dark:bg-card dark:text-primary-foreground dark:border-card 
+
+    hover:border
+    dark:hover:bg-gray-tertiary dark:hover:text-white" disabled={isLoading} onClick={handleSendDocument}>
           {isLoading ? "Sending..." : "Send"}
         </Button>
       </DialogContent>
