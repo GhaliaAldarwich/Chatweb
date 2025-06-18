@@ -103,7 +103,13 @@ const VoiceRecorder = () => {
 
             <DialogDescription className="flex flex-col gap-4">
               <audio controls src={audioURL} className="w-full" />
-              <Button onClick={handleSend}>Send Voice</Button>
+              <Button className="w-full flex gap-2 border
+   text-primary-foreground border-primary-foreground
+
+    dark:bg-card dark:text-primary-foreground dark:border-card 
+
+    hover:border
+    dark:hover:bg-gray-tertiary dark:hover:text-white" onClick={handleSend}>Send Voice</Button>
             </DialogDescription>
           </DialogContent>
         </Dialog>
